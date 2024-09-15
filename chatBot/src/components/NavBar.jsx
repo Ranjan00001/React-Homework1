@@ -1,12 +1,20 @@
 import '../css/NavBar.css'
+import { useNavigate } from 'react-router-dom';
+
 
 function NavBar() {
+    const navigate = useNavigate()
+
+    const goChat = () => {
+        navigate('/chat')
+    }
+    
     return (
-      <nav className="navbar">
-        <div>iiInsener</div>
-        <div><button className='chat-button'>Start Chat</button></div>
-      </nav>
+        <nav className="navbar">
+            <div className='brand'>iiInsener</div>
+            <div><button className='chat-button' onClick={goChat}>Start Chat</button></div>
+        </nav>
     );
-  }
-  
-  export default NavBar;
+}
+
+export default NavBar;

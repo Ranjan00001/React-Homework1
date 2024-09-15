@@ -4,7 +4,12 @@
     min-height:20px;
     border-radius: 25px;
     margin-top: 10px;
-
+    min-height: 30px;
     text-align: center;
     /* max-width:fit-content; */
+}
+
+#container {
+    font-size: 3vh;
+    font-family: Calibri, sans-serif;
 }

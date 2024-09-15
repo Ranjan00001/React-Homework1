@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  background-color: rgb(228, 240, 145);
+}
+
 .center {
   margin: auto;
   width: 50%;
