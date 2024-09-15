@@ -1,0 +1,15 @@
+.navbar {
+    background-color: black;
+    color: bisque;
+    padding: 10px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.chat-button {
+    background-color: blue;
+    border-radius: 25px;
+}

@@ -1,0 +1,10 @@
+.welcome {
+    background-color: black;
+    color: aliceblue;
+    min-height:20px;
+    border-radius: 25px;
+    margin-top: 10px;
+
+    text-align: center;
+    /* max-width:fit-content; */
+}
