@@ -1,19 +1,11 @@
 .navbar {
-    background-color: rgb(2, 2, 31);
+    background-color: #03045e;
     color: bisque;
-    height: 6vh;
-    padding: 3vh;
+    min-height: fit-content;
+    padding: 0.4vh;
     border: none;
-    display: flex;
-    justify-content: space-between;
     padding-left: 10vw;
     padding-right: 10vw;
-}
-
-.chat-button {
-    background-color: rgb(0, 255, 157);
-    border-radius: 25px;
-    height: 30px;
 }
 
 .brand {

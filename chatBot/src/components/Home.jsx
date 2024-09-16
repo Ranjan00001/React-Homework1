@@ -1,6 +1,12 @@
 import '../css/Home.css'
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+    const navigate = useNavigate()
+
+    const goChat = () => {
+        navigate('/chat')
+    }
 
     return (
         <>
@@ -21,6 +27,8 @@ function Home() {
                         <h3>Real-Time Responses.</h3>
                     </li>
                 </ul>
+                <div><button className='chat-button' onClick={goChat}>Start Chat</button></div>
+
             </div>
             <div className='container'>
 
