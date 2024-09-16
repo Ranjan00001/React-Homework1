@@ -20,6 +20,7 @@
 3. Install React Dependecies
    ```bash
    npm install
+   npm install react-router-dom
 4. Run the project in your local
    ```bash
    npm run dev
