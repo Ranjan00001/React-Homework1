@@ -11,9 +11,23 @@
     margin: 10px;
 }
 
-.prevMessage {
-    background-color: blueviolet;
-    height: 100%;
-    margin: 10%;
-    margin-top: 0;
+.messageContainer {
+    background-color: aliceblue;
+    height: 70vh;
+    width: 70vw;
+    margin-left: 4%;
+    border-radius: 25px;
+    overflow-y: scroll;
+}
+
+
+.query {
+    position: relative;
+    /* bottom: 0px; */
+    right: 0;
+}
+
+.query img {
+    height: 40px;
+    width: 40px;
 }

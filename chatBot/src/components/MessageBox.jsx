@@ -9,7 +9,15 @@ function MessageBox({handleSend}) {
     return (
         <>
             <div className='messageBox'>
-                <input  value={message} placeholder='Prompt the Bot...' onChange={(e) => setMessage(e.target.value)} />
+                <input  value={message} placeholder='Prompt the Bot...' 
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyDown={(e)=> {
+                    if (e.key === 'Enter') {
+                        handleSend(message)
+                        setMessage('')
+                    }                    
+                }}
+                />
                 {/* <ReactMarkdown>{message}</ReactMarkdown> */}
                 <img className='sendButton' onClick={() => handleSend(message)} src={send}></img>
             </div>

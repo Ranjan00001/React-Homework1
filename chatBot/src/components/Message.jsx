@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../css/Message.css'
 import MessageBox from './MessageBox'
+import user from '../assets/user.png'
 
 function Message({ botName }) {
     const [newMessage, setNewMessage] = useState(null)
@@ -17,17 +18,16 @@ function Message({ botName }) {
 
             </div>
             <div className='messageContainer'>
-                <div className='prevMessage'>
-                    <div className='query'>
-                        {newMessage}
-                    </div>
-                    <div className='reply'>
-                        {/* {newMessage && reply(newMessage, operation)} */}
-                    </div>
+                <div className='query'>
+                    <div>{newMessage}</div>
+                    <img src={user} alt='userImage'></img>
                 </div>
-                <div>
-                    <MessageBox handleSend={handleSend} />
+                <div className='reply'>
+                    {/* {newMessage && reply(newMessage, operation)} */}
                 </div>
+            </div>
+            <div>
+                <MessageBox handleSend={handleSend} />
             </div>
         </>
     )
