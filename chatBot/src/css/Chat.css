@@ -2,6 +2,17 @@
     display: flex;
 }
 
-.message {
+/* .message {
     width: 100%;
+} */
+
+.messageContainer {
+    background-color: aliceblue;
+    position: relative;
+    height: 72.5vh;
+    width: 70vw;
+    margin-top: 4%;
+    margin-left: 4%;
+    border-radius: 25px;
+    overflow-y: scroll; 
 }

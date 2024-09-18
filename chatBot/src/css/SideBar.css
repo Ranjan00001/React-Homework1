@@ -1,9 +1,10 @@
 
 .sideBarContainer {
-    background-color: #90e0ef;
+    background-color: #ffffff;
     width: 20vw;
-    height: 100vh;
-    padding: 2vh;
-    border: 12px solid rgb(48, 174, 174);
+    height: 72.5vh;
+    border: 3px solid rgb(48, 174, 174);
     border-radius: 25px;
+    margin: 2%;
+    margin-top: 3%;
 }
