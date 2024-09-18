@@ -1,4 +1,5 @@
 .navbar {
+    display: flex;
     background-color: #03045e;
     color: bisque;
     min-height: fit-content;
@@ -6,8 +7,17 @@
     border: none;
     padding-left: 10vw;
     padding-right: 10vw;
+    position: relative;
+    align-items: center;
+}
+
+.hamburgerMenu {
+    height: 60%;
+    margin: 15px;
+    margin-bottom: 0;
 }
 
 .brand {
     font-size: 50px;
 }
+

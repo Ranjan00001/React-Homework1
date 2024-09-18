@@ -8,3 +8,14 @@
     margin: 2%;
     margin-top: 3%;
 }
+
+.sideBarContainer ol{
+    margin: 0;
+    height: 70px;
+    cursor: pointer;
+}
+
+.sideBarContainer h1 {
+    margin: 0;
+}
+

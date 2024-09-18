@@ -1,7 +1,7 @@
 import '../css/SideBar.css'
 
 function SideBar({handleClick}) {
-    const list = ['Bot1', 'Bot2']
+    const list = ['Capitalize', 'Count Words', 'Count Vowels', 'Lower case']
     
 
     return (
@@ -9,7 +9,7 @@ function SideBar({handleClick}) {
             <div className="sideBarContainer">
                 {
                     list.map((botName, index) => (
-                        <ol key={index} onClick={() => handleClick(botName)}><h1>{botName}</h1></ol>
+                        <ol key={index} onClick={() => handleClick(botName)}>{botName}</ol>
                     ))
                 }
             </div>

@@ -1,25 +1,36 @@
-import Uppercase from './Uppercase';
-import Lowercase from './Lowercase';
-import ReverseText from './ReverseText';
-import CountCharacters from './CountCharacters';
-import CountWords from './CountWords';
-import MostFrequentLetter from './MostFrequentLetter';
-import CapitalizeWords from './CapitalizeWords';
-import RemoveVowels from './RemoveVowels';
-import RemoveConsonants from './RemoveConsonants';
-import RepeatWords from './RepeatWords';
-import ReplaceSpaces from './ReplaceSpaces';
-import ShuffleWords from './ShuffleWords';
-import JumbleWords from './JumbleWords';
-import CountVowelsConsonants from './CountVowelsConsonants';  // Added this one
+import '../css/Chat.css'
 import SideBar from './SideBar'
 import Message from './Message'
 import MessageBox from './MessageBox'
 import { useState, useRef, useEffect } from 'react'
 
+function reply(text, operation) {
+    if (operation === 'Count Words') {
+        return 'Word counts: ' + text.trim().split(/\s+/).length
+    }
+    else if (operation === 'Capitalize') {
+        return 'Capitalized to: ' + text.toUpperCase()
+    }
+    else if (operation === 'Lower case') {
+        return 'Lower Case is: ' + text.toLowerCase()
+    }
+    else if (operation === 'Count Vowels') {
+        const Vowels = ['a', 'e', 'i', 'o', 'u']
+        const lower = text.toLowerCase()
+        let count = 0
+        for (let i = 0; i < text.length; i++) {
+            if (Vowels.includes(lower.charAt(i))) {
+                count++
+            }
+        }
+        return 'Vowel count is: ' + count
+    }
+}
+
 function Chat() {
-    const [selectedBot, setSelectedBot] = useState(null)
+    const [selectedBot, setSelectedBot] = useState('Capitalize')
     const [newMessage, setNewMessage] = useState([])
+    const [answer, setAnswer] = useState([])
     const reference = useRef()
 
     useEffect(() => {
@@ -30,45 +41,24 @@ function Chat() {
         setSelectedBot(botName)
     }
     function handleSend(message) {
-        setNewMessage((newMessage) => [...newMessage, message])
+        if (!message.trim()) return
+        setNewMessage([...newMessage, message])
+        setAnswer([...answer, reply(message, selectedBot)])
         message = ''
     }
-  const [messages, setMessages] = useState([]);
-  const [userInput, setUserInput] = useState('');
-
-  const transformations = [
-    <Uppercase text={userInput} />,
-    <Lowercase text={userInput} />,
-    <ReverseText text={userInput} />,
-    <CountCharacters text={userInput} />,
-    <CountWords text={userInput} />,
-    <MostFrequentLetter text={userInput} />,
-    <CapitalizeWords text={userInput} />,
-    <RemoveVowels text={userInput} />,
-    <RemoveConsonants text={userInput} />,
-    <RepeatWords text={userInput} />,
-    <ReplaceSpaces text={userInput} />,
-    <ShuffleWords text={userInput} />,
-    <JumbleWords text={userInput} />,
-    <CountVowelsConsonants text={userInput} />,  // Added here
-  ];
-
-  const handleSendMessage = () => {
-    const randomTransformation = transformations[Math.floor(Math.random() * transformations.length)];
-    setMessages([...messages, { user: userInput }, { bot: randomTransformation }]);
-    setUserInput('');
-  };
 
     return (
         <>
             <div className='chat'>
                 <SideBar handleClick={handleClick} />
                 <div>
+                    <div className='header'>Prompting Bot to {selectedBot}</div>
                     <div className='messageContainer'>
-                        {newMessage.map((msg, index) => (
-                            <Message key={index} botName={selectedBot} newMessage={msg} />
-
-                        ))}
+                        {newMessage.map((query, index) => {
+                            return (
+                                <Message key={index} botName={selectedBot} newMessage={[query, answer[index]]} />
+                            );
+                        })}
                         <div ref={reference}></div>
                     </div>
                     <MessageBox handleSend={handleSend} />

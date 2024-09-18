@@ -12,13 +12,13 @@ function Message({ botName, newMessage }) {
 
                 <div className='prevMessage'>
                     <div className='query'>
-                        <div className='queryBox' >{newMessage}</div>
+                        <div className='queryBox' >{newMessage[0]}</div>
                         <img src={user} alt='userImage'></img>
                     </div>
                     <div className='reply'>
                         <img src={bot} alt='botImage'></img>
                         {/* {Response(newMessage)} */}
-                        <div className='replyBox' >{newMessage}</div>
+                        <div className='replyBox' >{newMessage[1]}</div>
                     </div>
                 </div>}
             
