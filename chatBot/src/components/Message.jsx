@@ -5,6 +5,7 @@ import user from '../assets/user.png'
 import bot from '../assets/bot.png'
 
 function Message({ botName, newMessage }) {
+    const time = new Date().toLocaleTimeString()
 
     return (
         <>
@@ -12,16 +13,21 @@ function Message({ botName, newMessage }) {
 
                 <div className='prevMessage'>
                     <div className='query'>
-                        <div className='queryBox' >{newMessage[0]}</div>
+                        <div className='queryBox' >{newMessage[0]}
+                            <br />
+                            <small>{time}</small>
+                        </div>
                         <img src={user} alt='userImage'></img>
                     </div>
                     <div className='reply'>
                         <img src={bot} alt='botImage'></img>
-                        {/* {Response(newMessage)} */}
-                        <div className='replyBox' >{newMessage[1]}</div>
+                        <div className='replyBox' >{newMessage[1]}
+                            <br />
+                            <small>{time}</small>
+                        </div>
                     </div>
                 </div>}
-            
+
         </>
     )
 }

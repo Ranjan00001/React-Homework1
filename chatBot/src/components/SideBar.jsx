@@ -1,16 +1,23 @@
 import '../css/SideBar.css'
 
-function SideBar({handleClick}) {
-    const list = ['Capitalize', 'Count Words', 'Count Vowels', 'Lower case']
-    
+function SideBar({ handleClick, selectedBot }) {
+    const list = ['Capitalize', 'Count Words', 'Count Vowels', 'Lower case', 'Reverse', 'Underscorer']
+    let color
 
     return (
         <>
             <div className="sideBarContainer">
                 {
-                    list.map((botName, index) => (
-                        <ol key={index} onClick={() => handleClick(botName)}>{botName}</ol>
-                    ))
+                    list.map((botName, index) => {
+                        if (botName === selectedBot) {
+                            color = "green";
+                        }
+                        else {
+                            color = 'white'
+                        }
+                        { console.log(color) }
+                        return (<ol key={index} onClick={() => handleClick(botName)} style={{ backgroundColor: color }}>{botName}</ol>)
+                    })
                 }
             </div>
         </>

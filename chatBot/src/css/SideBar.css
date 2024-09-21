@@ -11,11 +11,13 @@
 
 .sideBarContainer ol{
     margin: 0;
-    height: 70px;
+    height: 11%;
     cursor: pointer;
+    padding-top: 10%;
+    border-radius: 25px;
 }
 
 .sideBarContainer h1 {
-    margin: 0;
+    margin: 10%;
 }
 

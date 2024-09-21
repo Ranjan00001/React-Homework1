@@ -14,6 +14,12 @@ function reply(text, operation) {
     else if (operation === 'Lower case') {
         return 'Lower Case is: ' + text.toLowerCase()
     }
+    else if (operation === 'Reverse') {
+        return 'Reverse is: ' + text.split(' ').reverse().join(' ')
+    }
+    else if (operation === 'Underscorer') {
+        return 'Replaced spaces with underscore: ' + text.replace(/\s/g, '_')
+    }
     else if (operation === 'Count Vowels') {
         const Vowels = ['a', 'e', 'i', 'o', 'u']
         const lower = text.toLowerCase()
@@ -50,7 +56,7 @@ function Chat() {
     return (
         <>
             <div className='chat'>
-                <SideBar handleClick={handleClick} />
+                <SideBar handleClick={handleClick} selectedBot={selectedBot} />
                 <div>
                     <div className='header'>Prompting Bot to {selectedBot}</div>
                     <div className='messageContainer'>
